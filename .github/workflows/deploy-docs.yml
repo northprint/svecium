@@ -48,7 +48,9 @@ jobs:
           PUBLIC_CESIUM_ION_TOKEN: ${{ secrets.CESIUM_ION_TOKEN || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0NDViM2NkNi0xYTE2LTRlZTUtODBlNy02MDY2YzM3MmI5NjAiLCJpZCI6MjU5LCJpYXQiOjE3MzU2NjA5MTV9.E3WBVALA-Y8STGTb3FcRLNW_aNghZy5Tcr-CicdCQDg' }}
 
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v4
+        continue-on-error: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -66,3 +68,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        continue-on-error: true
